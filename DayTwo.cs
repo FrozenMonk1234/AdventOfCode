@@ -25,6 +25,8 @@ namespace AdventOfCode
                 var charArray = set.ToCharArray();
                 bool redFlag = false;
                 Dictionary<string, int> invalidGame = new();
+                //Checks if array is at the correct word to check prefixed number. If prefix number meets invalid criteria 
+                //then the flag is raised which by then end of the statment if flag is raised it removed the item at that index
                 for (int j = 0; j < charArray.Length; j++)
                 {
                     if (charArray[j] == 'r' && charArray[j + 1] == 'e' && charArray[j + 2] == 'd')

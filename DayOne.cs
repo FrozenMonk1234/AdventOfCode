@@ -19,6 +19,7 @@ namespace AdventOfCode
                 var calibratedValue = "";
                 var reversedTemp = inputList[i].Reverse().ToList();
                 var temp = inputList[i].ToList();
+                //Checks the string from left right to find the first occurance of a number
                 for (int j = 0; j < temp.Count; j++)
                 {
                     if (calibratedValue.Length == 1)
@@ -35,7 +36,7 @@ namespace AdventOfCode
                         }
                     }
                 }
-
+                //Checks the reversed string from left right to find the first occurance of a number
                 for (int j = 0; j < reversedTemp.Count; j++)
                 {
                     if (calibratedValue.Length == 2)
