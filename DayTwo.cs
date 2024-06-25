@@ -13,7 +13,6 @@ namespace AdventOfCode
 
         public int Execute(string input)
         {
-            string[] colors = ["red", "green", "blue"];
             List<string> inputList = input.Split(Environment.NewLine).ToList();
             List<string> outputList = inputList;
 
@@ -23,7 +22,7 @@ namespace AdventOfCode
                 var set = inputList[i].Substring(7);
 
                 var charArray = set.ToCharArray();
-                bool redFlag = false;
+                bool flag = false;
                 Dictionary<string, int> invalidGame = new();
                 //Checks if array is at the correct word to check prefixed number. If prefix number meets invalid criteria 
                 //then the flag is raised which by then end of the statment if flag is raised it removed the item at that index
@@ -38,9 +37,9 @@ namespace AdventOfCode
                         }
 
                         Int32.TryParse(Number.Trim(), out var value);
-                        if (value > 12)
+                        if (value >= 12)
                         {
-                            redFlag = true;
+                            flag = true;
                             break;
                         }
                     }
@@ -54,9 +53,9 @@ namespace AdventOfCode
                         }
 
                         Int32.TryParse(Number.Trim(), out var value);
-                        if (value > 13)
+                        if (value >= 13)
                         {
-                            redFlag = true;
+                            flag = true;
                             break;
                         }
                     }
@@ -70,15 +69,15 @@ namespace AdventOfCode
                         }
 
                         Int32.TryParse(Number.Trim(), out var value);
-                        if (value > 13)
+                        if (value >= 14)
                         {
-                            redFlag = true;
+                            flag = true;
                             break;
                         }
                     }
                 }
 
-                if (redFlag)
+                if (flag)
                 {
                     outputList.RemoveAt(i);
                 }
